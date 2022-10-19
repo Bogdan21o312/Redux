@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import TodoItem from "./TodoItem";
 import {Todo} from "../App";
+import "../index.css"
 
 interface TodoListProps {
     todos: Todo[],

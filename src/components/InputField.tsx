@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import "../index.css"
 
 interface InputFieldProps {
     text: any,
