@@ -29,6 +29,10 @@ const App = () => {
         }
     }
 
+    const removeTodo = (todoId) => {
+        setTodos(todos.filter(todo => todo.id !== todoId))
+    }
+
     return (
         <div>
             <label>
@@ -38,7 +42,10 @@ const App = () => {
                     {todos.map(todo => <li key={todo.id}>
                         <input type="checkbox"/>
                         <span>{todo.text}</span>
-                        <span>&times;</span>
+                        <span
+                            style={{color: "red"}}
+                            onClick={() => removeTodo(todo.id)}
+                        >&times;</span>
                     </li>)}
                 </ul>
             </label>
