@@ -2,9 +2,9 @@ import React, {FC} from 'react';
 import "../index.css"
 
 interface InputFieldProps {
-    text: any,
-    handleSubmit: any,
-    handleInput: any
+    text: string,
+    handleSubmit: (todoId: any) => void,
+    handleInput: (todoId: string) => void
 }
 
 const InputField: FC<InputFieldProps> = ({text, handleSubmit, handleInput}) => {
