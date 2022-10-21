@@ -10,7 +10,10 @@ interface InputFieldProps {
 const InputField: FC<InputFieldProps> = ({text, handleSubmit, handleInput}) => {
     return (
         <label>
-            <input value={text} onChange={(e) => handleInput(e.target.value)}/>
+            <input
+                placeholder="Created New Todo 📄"
+                value={text}
+                onChange={(e) => handleInput(e.target.value)}/>
             <button onClick={handleSubmit}>Add Todo</button>
         </label>
     );

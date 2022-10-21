@@ -1,15 +1,15 @@
 import React from 'react';
 import TodoItem from "./TodoItem";
 import "../index.css"
-import {useSelector} from "react-redux";
+import {useAppSelector} from "../hooks/useAppSelector";
 
 
 const TodoList = () => {
-    const todos = useSelector((state: any) => state.todos.todos)
+    const todos = useAppSelector(state => state.todos.list)
     return (
         <ul>
             {
-             todos.map((todo: any) => <TodoItem
+             todos.map(todo => <TodoItem
                  key={todo.id}
                  {...todo}
              />)

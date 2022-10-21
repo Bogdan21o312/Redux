@@ -1,16 +1,11 @@
 import React, {FC} from 'react';
 import "../index.css"
-import {useDispatch} from "react-redux";
 import {removeTodo, toggleTodoComplete} from "../store/todoSlice";
+import {Todo} from "../models/ITodo";
+import {useAppDispatch} from "../hooks/useAppDispatch";
 
-interface TodoItemProps {
-    id:  any,
-    text: string,
-    completed: boolean,
-}
-
-const TodoItem: FC<TodoItemProps> = ({id, text, completed}) => {
-    const dispatch = useDispatch()
+const TodoItem: FC<Todo> = ({id, text, completed}) => {
+    const dispatch = useAppDispatch()
     return (
         <div>
             <ul>
@@ -19,14 +14,14 @@ const TodoItem: FC<TodoItemProps> = ({id, text, completed}) => {
                         className="checkbox"
                         type="checkbox"
                         checked={completed}
-                        onChange={() => dispatch(toggleTodoComplete({id}))
+                        onChange={() => dispatch(toggleTodoComplete(id))
                     }
                     />
                     <span>{text}</span>
                     <span
                         className="times"
                         onClick={() =>
-                            dispatch(removeTodo({id}))
+                            dispatch(removeTodo(id))
                         }
                     >&times;</span>
                 </li>
